@@ -19,7 +19,7 @@ def index(request):
             obj=LinkUrl(link=link,slug=uid)
             print(link)
             obj.save()
-            return render(request,"index.html",{"context":"http://localhost:8000/"+uid})
+            return render(request,"index.html",{"context":"https://djangourlsortner.herokuapp.com/"+uid})
     else:
         return redirect("/home")
         
