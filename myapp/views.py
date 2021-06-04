@@ -13,7 +13,7 @@ def index(request):
         link=request.POST["url"]
         obj1=LinkUrl.objects.filter(link=link)
         if obj1:
-            return render(request,"index.html",{"context":"http://localhost:8000/"+str(obj1[0].slug)})
+            return render(request,"index.html",{"context":"https://djangourlsortner.herokuapp.com/"+str(obj1[0].slug)})
         else:
             uid=str(uuid.uuid4())[:5]
             obj=LinkUrl(link=link,slug=uid)
