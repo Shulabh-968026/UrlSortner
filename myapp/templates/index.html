@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Url Sortner</title>
+        <link  rel="stylesheet" href="{% static 'index.css' %}">
+    </head>
+
+<body>
+    <div class="main-div">
+        <div class="sub-div">
+            <h1>Url Sortner</h1>
+            <form method="POST" action="{% url 'myapp:index' %}" onsubmit="return validateForm()">
+                {% csrf_token %}
+                <input type="url" name="url" id="url" placeholder="Enter Url.."></br>
+                <button type="submit" id="submit">Submit</button>
+            </form>
+            {% if context %}
+            <p>Sort Url::<strong>{{ context }}</strong></p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="{% static 'index.js' %}"></script>
+</body>
+</html>
